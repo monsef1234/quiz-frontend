@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { getQuestions } from "../redux/qustionsSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Lottie from "lottie-react";
+import quizAnimation from "../animation/112900-checklist.json";
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -41,9 +43,9 @@ const Home = () => {
     try {
       setLoading(true);
       await axios
-        .post(`${import.meta.env.VITE_URL}/user`, { name })
+        .post(`https://quiz-sf08.onrender.com/user`, { name })
         .then((res) => {
-          console.log(res.data);
+          return;
         });
       setqstFetch(true);
     } catch (error) {
@@ -152,7 +154,7 @@ const Home = () => {
           </form>
         </div>
         <div className="max-w-2xl mx-auto">
-          {/* <Lottie animationData={quizAnimation} className="w-full h-full" /> */}
+          <Lottie animationData={quizAnimation} className="w-full h-full" />
         </div>
       </div>
     </div>

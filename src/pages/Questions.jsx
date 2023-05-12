@@ -14,13 +14,13 @@ const Questions = () => {
   const dispatch = useDispatch();
   const fun = async (point) => {
     await axios
-      .put(`${import.meta.env.VITE_URL}/user`, {
+      .put(`https://quiz-sf08.onrender.com/user`, {
         name: userId,
         category,
         point,
       })
       .then((res) => {
-        console.log(res.data);
+        return;
       })
       .catch((err) => {
         console.log(err.message);

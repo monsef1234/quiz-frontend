@@ -8,7 +8,7 @@ const Table = ({ category }) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        await axios.get(`${import.meta.env.VITE_URL}/user`).then((res) => {
+        await axios.get(`https://quiz-sf08.onrender.com/user`).then((res) => {
           setData(res.data);
         });
         setLoading(false);
